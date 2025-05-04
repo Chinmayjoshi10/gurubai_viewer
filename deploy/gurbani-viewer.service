@@ -1,0 +1,17 @@
+[Unit]
+Description=Gurbani Viewer
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=/home/pi/GurbaniViewer/dist/gurbani-viewer
+WorkingDirectory=/home/pi/GurbaniViewer
+StandardOutput=append:/var/log/gurbani-viewer.log
+StandardError=append:/var/log/gurbani-viewer-error.log
+
+[Install]
+WantedBy=multi-user.target 
